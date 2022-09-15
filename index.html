@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sokunmaru's Desk | Write</title>
+
+		<link rel="stylesheet" href="./scss/dist/style.css" />
+		<link rel="shortcut icon" href="/favicon.png" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/80ea5533be.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+
+	<body>
+		<header>
+			<div class="menus">
+				<a href="#writerApp" class="menu-item">
+					<i class="fa-solid fa-pencil icons"></i>
+				</a>
+				<a href="#contact-id" class="menu-item">
+					<i class="fa-solid fa-book-skull icons"></i>
+				</a>
+				<div class="menu-btns">
+					<i class="fa-solid fa-bars icons" id="nav-btn-open"></i>
+					<i
+						class="fa-solid fa-xmark icons"
+						id="nav-btn-close"
+						style="display: none"
+					></i>
+				</div>
+			</div>
+		</header>
+
+		<!-- ANCHOR *** [CENTER] -->
+		<div class="section-wrapper">
+			<section class="section section-col">
+				<!-- <h1>WRITE</h1> -->
+				<div class="postApp-container" id="writerApp">
+					<div class="posts-list-scroll">
+						<div class="posts-list">
+							<!-- * input post -->
+						</div>
+					</div>
+					<div class="posts" id="postApp">
+						<div class="create-post">
+							<div class="post-bar">
+								<input
+									class="input-post-title"
+									type="text"
+									name=""
+									id=""
+									placeholder="Untitled"
+									maxlength="50"
+									required
+								/>
+								<i
+									class="fa-solid fa-square-plus btn-postAdd"
+								></i>
+							</div>
+							<p class="post-alert"></p>
+							<textarea
+								class="post-text input-post-text"
+                                placeholder="Just start typing"
+								oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+							></textarea>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ----------------------------------------------------------------------- -->
+			<!--                                [FOOTER]                                 -->
+			<!-- ----------------------------------------------------------------------- -->
+			<section class="section">
+				<div class="socialBar" id="contact-id">
+					<div class="socialBar-top">
+						<p>Contact</p>
+						<h3 class="email">sr.dragonfang@hotmail.com</h3>
+					</div>
+					<div class="socialBar-bottom">
+						<div class="socialBar-bottom-info">
+							<p class="socialBar-logo">
+								Sokunmaru Group | Copyright &copy; 2022
+							</p>
+							<p>
+								Image Source:
+								<span>
+									Grafit Studio
+									<a
+										href="https://www.artstation.com/artwork/DABWJn"
+										alt="image url"
+										><i class="fa-solid fa-link"></i
+									></a>
+								</span>
+							</p>
+							<p>
+								developed by
+								<strong class="credits-author"
+									>S.R Dragonfang</strong
+								>
+							</p>
+						</div>
+						<div class="socialBar-list">
+							<div class="socialBar-item">
+								<a href="www.github.com/srdragonfang">github</a>
+							</div>
+							<div class="socialBar-item">
+								<a href="www.instagram.com/srdragonfang"
+									>instagram</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- ANCHOR *** [SCRIPT] -->
+		<script src="js/script.js"></script>
+		<script src="js/appMusicPlayer.js"></script>
+		<!-- <script src="js/appMusic.js"></script> -->
+		<script src="js/appClock.js"></script>
+		<script src="js/appTodo.js"></script>
+		<script src="js/appNotes.js"></script>
+		<script src="js/appWriter.js"></script>
+		<script src="js/appScrum.js"></script>
+	</body>
+</html>

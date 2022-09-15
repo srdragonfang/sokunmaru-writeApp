@@ -1,0 +1,52 @@
+@use '../globals' as g;
+
+header {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	// bottom: 1rem;
+	// left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// width: 100vw;
+	z-index: 1001;
+    & a i {
+        color: #f9f9f9 !important;
+    }
+}
+.menus {
+	@include g.flexbox(row, center);
+	width: max-content;
+}
+
+.menu-btns,
+.menu-item {
+	width: 50px !important;
+	height: 50px !important;
+	padding: auto;
+	margin: 0.5rem;
+	border-radius: 50%;
+	background: #191919;
+	box-shadow: 0px 4px 4px #191919;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    color: #f9f9f9 !important;
+	text-decoration: unset;
+    cursor: pointer;
+	&:hover {
+		transform: translateY(-3px);
+		transition: all 0.1s linear;
+		background: #f5e0e0;
+		& i {
+            color: #191919 !important;
+            transform: rotate(360deg);
+			transition: all 1s linear;
+		}
+	}
+}
+
+.menu-item {
+    display: none;
+}

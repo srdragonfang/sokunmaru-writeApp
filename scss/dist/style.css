@@ -1,0 +1,436 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.0075rem;
+  color: #757575 !important;
+  background-color: #f5f5f4;
+}
+
+section {
+  min-width: 100vw !important;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  line-height: 1.25;
+  text-shadow: 2px 2px 8px #191919;
+  width: 100%;
+  text-align: center;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+:root {
+  --background-color: #191919;
+  --text-color: #f9f9f9;
+  --bg-gradient: linear-gradient(
+  	-225deg,
+  	#231557 0%,
+  	#44107a 29%,
+  	#ff1361 67%,
+  	#fff800 100%
+  );
+  --text-gradient: linear-gradient(
+  	-225deg,
+  	#231557 0%,
+  	#44107a 29%,
+  	#ff1361 67%,
+  	rgb(0, 162, 255) 100%
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+header {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+header a i {
+  color: #f9f9f9 !important;
+}
+
+.menus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.menu-btns,
+.menu-item {
+  width: 50px !important;
+  height: 50px !important;
+  padding: auto;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background: #191919;
+  box-shadow: 0px 4px 4px #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f9f9f9 !important;
+  text-decoration: unset;
+  cursor: pointer;
+}
+.menu-btns:hover,
+.menu-item:hover {
+  transform: translateY(-3px);
+  transition: all 0.1s linear;
+  background: #f5e0e0;
+}
+.menu-btns:hover i,
+.menu-item:hover i {
+  color: #191919 !important;
+  transform: rotate(360deg);
+  transition: all 1s linear;
+}
+
+.menu-item {
+  display: none;
+}
+
+.section-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+}
+.section-row {
+  padding: 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.section-row .main-left {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.section-row .main-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 35%;
+  height: 100%;
+  position: relative;
+}
+.section-col {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.section-col.main-left {
+  width: 80%;
+  height: 100%;
+  border: 2px groove goldenrod;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn {
+  outline: 0;
+  border: 0;
+}
+.btn-postAdd {
+  font-size: 3rem !important;
+}
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.icons {
+  cursor: pointer;
+}
+
+.postApp-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: hidden !important;
+}
+
+.posts {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+.posts .create-post {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: none;
+}
+.posts .create-post .post-bar {
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.posts .create-post .post-bar input {
+  width: 100%;
+  background: transparent;
+  padding: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: inherit;
+  border: 0;
+  outline: 0;
+}
+.posts .create-post .post-bar input::-moz-placeholder {
+  letter-spacing: 0.075rem !important;
+}
+.posts .create-post .post-bar input:-ms-input-placeholder {
+  letter-spacing: 0.075rem !important;
+}
+.posts .create-post .post-bar input::placeholder {
+  letter-spacing: 0.075rem !important;
+}
+.posts .create-post .post-bar h3 {
+  flex: 1;
+  margin: 0 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.6rem;
+}
+.posts .create-post .post-bar i:first-of-type {
+  font-size: 1.6rem;
+}
+.posts .create-post .post-bar i + i {
+  margin-left: 1rem;
+}
+.posts .create-post .post-text {
+  width: 100%;
+  height: 100% !important;
+  border: 0;
+  outline: 0;
+  font-family: transparent;
+  resize: none;
+  padding: 0.5rem 2rem 2rem;
+  font-size: 2rem;
+  color: inherit;
+  opacity: 0.95;
+  border-radius: 0 0 5px 5px;
+}
+.posts .create-post .post-text::-webkit-scrollbar {
+  display: none;
+}
+
+.posts-list-scroll {
+  width: 25%;
+  height: 100%;
+  background-color: #f5e0e0;
+}
+
+.posts-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+.posts-list h1 {
+  margin: 1rem 0;
+}
+.posts-list::-webkit-scrollbar {
+  background: rgba(25, 25, 25, 0.4588235294);
+  width: 5px;
+  display: none;
+}
+.posts-list::-webkit-scrollbar-thumb {
+  background-color: #191919;
+}
+.posts-list .post {
+  width: 100%;
+  border-bottom: 0.1px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: none;
+}
+.posts-list .post-bar {
+  padding: 1rem 1rem 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.posts-list .post-bar h3 {
+  flex: 1;
+  margin: 0 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.posts-list .post-bar i:first-of-type {
+  font-size: 1.6rem;
+}
+.posts-list .post-bar i + i {
+  margin-left: 1rem;
+}
+.posts-list .post-title {
+  width: 60%;
+}
+.posts-list .post-text {
+  width: 100%;
+  resize: none;
+  padding: 1rem;
+  font-size: 1.6rem;
+  white-space: pre-wrap;
+  text-align: left !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.posts-list .post-text:active, .posts-list .post-text:focus {
+  border: 0;
+  outline: 0;
+}
+
+.editor-toolbar {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialBar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: none;
+}
+.socialBar-bottom {
+  width: 100%;
+  padding: 0 3rem;
+  background: #191919;
+  color: #f9f9f9;
+  border-top: 1px groove goldenrod;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.socialBar-bottom-info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.socialBar-list {
+  border-left: 1px groove goldenrod;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.socialBar-item a {
+  color: inherit;
+  border: dashed 1px transparent;
+}
+.socialBar-item a:hover {
+  border: dashed 1px goldenrod;
+}
+.socialBar-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.socialBar-top p {
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 4px 8px #191919;
+}
+.socialBar-top .email {
+  font-size: 5rem;
+  text-shadow: 2px 4px 8px #191919;
+}
+
+@media screen and (max-width: 768px) {
+  .socialBar {
+    padding: 0 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */
